@@ -46,6 +46,8 @@ function getTriangle(a, b, c){
 		let q = new Triangle(a, b, c);
 	} catch (err){
 		
+
+		
 	}
 	return q;
 }
