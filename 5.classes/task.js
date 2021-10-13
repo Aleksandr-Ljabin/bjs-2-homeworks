@@ -79,9 +79,21 @@ class Library {
 		}
 	}
 	findBookBy(type, value){
-		result =  this.book.find(type[value]);
-		
-		return result;
+		if ((this.books.find(item => item.type == value)) === undefined){
+			return null;
+		}else {
+		  return this.books.find(item => item.type == value);
+		}
+	}
+
+	giveBookByName(bookName){
+		if ((this.books.name.includes(bookName)) === false){
+			return null;
+		}else {
+			let searchBook = this.books.find(item => item.name = bookName);
+			delete this.books.find(item => item.name = bookName);
+		  	return searchBook;
+		}
 	} 
 }
 
