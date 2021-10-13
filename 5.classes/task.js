@@ -79,9 +79,8 @@ class Library {
 		}
 	}
 	findBookBy(type, value){
-		for (let i = 0; i < this.books.length; i++){
-			let result = i.type[value];
-		}
+		result =  this.book.find(type[value]);
+		
 		return result;
 	} 
 }

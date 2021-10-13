@@ -8,11 +8,10 @@ function parseCount(value){
 
 function validateCount(item){
 	try {
-		result = parseCount(item);
+		return parseCount(item);
 	} catch (err){
-		result = new Error("Невалидное значение");
-	}
-	return result;
+		return err;
+	  }
 }
 
 
@@ -23,7 +22,7 @@ class Triangle {
 		this.a = a;
 		this.b = b;
 		this.c = c;
-		if (this.a + this.b < this.c || this.a + this.c < this.b || this.b + this.c < this.a){
+		if (a + b < c || a + c < b || b + c < a){
 			throw new Error("Треугольник с такими сторонами не существует");
 		}
 	}
@@ -34,8 +33,8 @@ class Triangle {
 
 	getArea(){
 		this.pp = this.p / 2;
-		this.s = Math.sqrt(this.pp * (this.pp - this.a) * (this.pp - this.b) * (this.pp - this.c));
-		return this.s.toFixed(3);
+		this.s = Number(Math.sqrt(this.pp * (this.pp - this.a) * (this.pp - this.b) * (this.pp - this.c)).toFixed(3));
+		return this.s;
 	}
 
 }
@@ -43,11 +42,8 @@ class Triangle {
 
 function getTriangle(a, b, c){
 	try {
-		let q = new Triangle(a, b, c);
+		return new Triangle(a, b, c);
 	} catch (err){
 		
-
-		
-	}
-	return q;
+	  }
 }
