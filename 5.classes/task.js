@@ -79,19 +79,19 @@ class Library {
 		}
 	}
 	findBookBy(type, value){
-		if ((this.books.find(item => item.type == value)) === undefined){
+		if ((this.books.find(item => item[type] == value)) === undefined){
 			return null;
 		}else {
-		  return this.books.find(item => item.type == value);
+		  return this.books.find(item => item[type] == value);
 		}
 	}
 
 	giveBookByName(bookName){
-		if ((this.books.name.includes(bookName)) === false){
+		if ((this.books.book.name.includes(bookName)) === false){
 			return null;
 		}else {
-			let searchBook = this.books.find(item => item.name = bookName);
-			delete this.books.find(item => item.name = bookName);
+			let searchBook = this.book.find(item => item[name] = bookName);
+			delete this.book.find(item => item[name] = bookName);
 		  	return searchBook;
 		}
 	} 
